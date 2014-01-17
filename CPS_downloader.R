@@ -37,6 +37,8 @@ unlink(temp)
 #Column names don't import properly.
 #Either set up in CSV or add manually like so
 colnames(CPS_heads)<-c("series_id", "lfst_code","periodicity_code","series_description","absn_code","activity_code","ages_code","class_code","duration_code","education_code","entr_code","expr_code","hheader_code","hour_code","indy_code","jdes_code","look_code","mari_code","mjhs_code","occupation_code","orig_code","pcts_code","race_code","rjnw_code","rnlf_code","rwns_code","seek_code","sexs_code","tdat_code","vets_code","wkst_code","born_code","chld_code","disa_code","seasonal","footnote_codes","begin_year","begin_period","end_year","end_period")
+#save this for future use
+save(CPS_heads,file="CPS_heads.RData")
 
 #Merge series descriptions into main CPS files
 CPS_Main <- merge(CPS_Main,CPS_heads,by=series_id)
